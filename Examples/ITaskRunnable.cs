@@ -8,6 +8,6 @@ namespace TestConsole.Examples
 {
     public interface ITaskRunnable
     {
-        void Run(); 
+        Task Run(); 
     }
 }

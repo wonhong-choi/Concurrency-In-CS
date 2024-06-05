@@ -28,7 +28,7 @@ namespace TestConsole.Examples
             });
         }
 
-        public void Run()
+        public async Task Run()
         {
             string[] urls = new string[]
             {
@@ -41,20 +41,20 @@ namespace TestConsole.Examples
             var downloads = from url in urls
                             select DownloadStringAsync(url);
 
-            Task.WhenAll(downloads).ContinueWith(results =>
+            await Task.WhenAll(downloads).ContinueWith(results =>
             {
                 stopwatch.Stop();
                 Console.WriteLine($"{results.Result.Sum(result => result.Length)} char retrived.{stopwatch.ElapsedMilliseconds} Elapsed.");
-            }).Wait();
+            });
 
             stopwatch.Restart();
             downloads = from url in urls
                         select DownloadStringAsync(url);
-            Task.WhenAll(downloads).ContinueWith(results =>
+            await Task.WhenAll(downloads).ContinueWith(results =>
             {
                 stopwatch.Stop();
                 Console.WriteLine($"{results.Result.Sum(result => result.Length)} char retrived.{stopwatch.ElapsedMilliseconds} Elapsed.");
-            }).Wait();
+            });
         }
     }
 }

@@ -13,12 +13,26 @@ using TestConsole.Examples;
 namespace TestConsole
 {
 
+    public interface ITest
+    {
+        void Test();
+    }
+
+    public class CTest : ITest
+    {
+        void ITest.Test()
+        {
+            Console.WriteLine("Explicit");
+        }
+    }
+
     public class Program
     {
         public static void Main(string[] args)
         {
-            ITaskRunnable test = new ReportingProgress();
+            ITaskRunnable test = new ProcessingTasksAsTheyComplete();
             test.Run();
+
 
 
             Console.ReadLine();

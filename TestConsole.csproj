@@ -45,7 +45,10 @@
   <ItemGroup>
     <Compile Include="Examples\CachedDownloads.cs" />
     <Compile Include="Examples\ITaskRunnable.cs" />
+    <Compile Include="Examples\ProcessingTasksAsTheyComplete.cs" />
     <Compile Include="Examples\ReportingProgress.cs" />
+    <Compile Include="Examples\WaitingAll.cs" />
+    <Compile Include="Examples\WaitingAny.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
